@@ -1,16 +1,14 @@
 const {EventEmitter} = require('events')
+const emitter = new EventEmitter()
 module.exports = class Connection {
     // ##BEGIN## 代码已加密
-gywgywgywgywgdqgdUgdvgdegdwgdmgd=gdqgdwgdUgdmgywgqRgqkgRd
-gywgywgywgywgywgywgywgywgdwgdkgdngdegqDgd9gRggd9gdvgdwgywgcRgywgdvgd9gRygywgcUgRggd9gdvgdwgcUgdDgdngdwgdwgd9gdmgqRgqkgc9gyw
-gywgywgywgywgRk
+    // 暗号 搜索算法
+    onConn(fn) {
+        emitter.on('even',fn)
+    }
 
-gywgywgywgywgdqgdUgdvgdvgd9gdqgdwgdngdUgdvgqRgdDgdegdRgqkgywgRd
-gywgywgywgywgywgywgywgywgdwgdkgdngdegqDgd9gRggd9gdvgdwgqDgd9gdDgdngdwgqRgqdgdqgdUgdvgdvgqdgqlgdDgdegdRgqk
-gywgywgywgywgRk
-
-gywgywgywgywgdUgdvgcDgdUgdvgdvgqRgdqgdygqkgywgRd
-gywgywgywgywgywgywgywgywgdwgdkgdngdegqDgd9gRggd9gdvgdwgqDgdUgdvgqRgqdgdqgdUgdvgdvgqdgqlgdqgdygqk
-gywgywgywgywgRk
+    connection(arg) {
+        emitter.emit('even',arg)
+    }
     // ##END##
 }
