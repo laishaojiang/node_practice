@@ -12,7 +12,7 @@ test('练习04 完成一个一对多查询', async () => {
     // 初始化模型
     const { initModel } = require('../index')
     const { Product, User } = await initModel(sequelize)
-
+    console.log(Product)
     // 设置数据
     user = await User.create({
         name: 'Tom',

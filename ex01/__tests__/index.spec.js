@@ -1,6 +1,7 @@
 test('练习01 自动化生成路由配置',() => {
     const {getRouter} = require('../index')
     const ret = getRouter(__dirname + '/data')
+    console.log('ret:',ret)
     expect(getRouter(__dirname + '/data')).toBe(
 `
 export default new Router({
