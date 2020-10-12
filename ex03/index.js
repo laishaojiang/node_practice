@@ -5,14 +5,20 @@ module.exports.parser = path => {
     let size = 0;
     return new Promise(resolve => {
          // ##BEGIN## 代码已加密
-gywgywgywgywgywgywgywgywgdmgd9gdggdcg9kgdwgdmgd9gdggdDgqDgdUgdvgqRgqdgdcgdggdwgdggqdgqlgywgdcgdggdwgdggywgcRgckgywgRd
-gywgywgywgywgywgywgywgywgywgywgywgywgdmgd9gdHgcvgdggdwgdggqDgdYgd=gdegdkgqRgdcgdggdwgdggqkgc9
-gywgywgywgywgywgywgywgywgywgywgywgywgdegdngR9gd9gywgqLgcRgywgdcgdggdwgdggqDgdPgd9gdvgdRgdwgdkgc9
-gywgywgywgywgywgywgywgywgRkgqkgc9
-gywgywgywgywgywgywgywgywgdmgd9gdggdcg9kgdwgdmgd9gdggdDgqDgdUgdvgqRgqdgd9gdvgdcgqdgqlgywgddgd=gdvgdqgdwgdngdUgdvgywgqRgqkgywgRd
-gywgywgywgywgywgywgywgywgywgywgywgywgdqgdUgdvgdegdwgywgdcgdggdwgdggywgcRgywgcPgd=gddgddgd9gdmgqDgdqgdUgdvgdqgdggdwgqRgdmgd9gdHgcvgdggdwgdggqlgywgdegdngR9gd9gqkgc9
-gywgywgywgywgywgywgywgywgywgywgywgywgdmgd9gdegdUgdPgRggd9gqRgcwg9kg9cg9qgqDgdYgdggdmgdegd9gqRgdcgdggdwgdggqDgdwgdUg9kgdwgdmgdngdvgdRgqRgqkgqkgqk
-gywgywgywgywgywgywgywgywgRkgqkgc9
+
+         //  暗号 二分查找
+        readStream.on('data', (data) => {
+            console.log(`读取的数据：${data}`)
+            reqData.push(data)
+            size += data.length
+        }) 
+
+        readStream.on('end', () => {
+            console.log('读取结束')
+            const data = Buffer.concat(reqData, size).toString()
+            console.log('data4:', data)
+            resolve(JSON.parse(data))
+        })
          // ##END##
     })
 }
